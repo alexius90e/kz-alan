@@ -126,9 +126,6 @@
           background-size: 12px;
         }
       }
-
-      &-text {
-      }
     }
   }
 
@@ -271,6 +268,8 @@
     gap: 20px;
     height: 194px;
     box-sizing: border-box;
+    background: url(../assets/bg/special-project-bg.webp) no-repeat center;
+    background-size: 1024px;
 
     @include desktop {
       height: 162px;
@@ -280,13 +279,13 @@
       position: static;
       height: auto;
       margin-top: 22px;
+      background-size: 800px;
     }
 
     @include mobile {
       flex-direction: column;
+      background-size: 600px;
     }
-
-    background: url(../assets/bg/special-project-bg.webp) no-repeat center;
 
     &-item {
       padding-left: 110px;
