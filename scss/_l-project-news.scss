@@ -1,1 +1,209 @@
-.project-news {}
+.project-news {
+  padding: 0 0 48px;
+
+  & .container {
+    @include tablet {
+      position: relative;
+    }
+  }
+
+  &__header {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 62px;
+
+    @include desktop {
+      gap: 36px;
+    }
+
+    @include laptop {
+      display: block;
+    }
+  }
+
+  &__heading {
+    position: relative;
+    flex: 0 0 480px;
+    padding-right: 60px;
+
+    @include laptop {
+      margin: 0 0 20px;
+    }
+
+    @include tablet {
+      position: static;
+    }
+
+    &-buttons {
+      position: absolute;
+      right: 0;
+      bottom: 4px;
+      z-index: 5;
+      display: flex;
+      gap: 6px;
+
+      @include tablet {
+        bottom: 400px;
+        right: 20px;
+      }
+    }
+  }
+
+  &__button_next,
+  &__button_prev {
+    display: block;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    background: url(../assets/icons/button-left-b.svg) no-repeat center;
+    background-size: cover;
+
+    @include tablet {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &__button_next {
+    transform: rotate(180deg);
+  }
+
+  &__title {
+    margin: 9px 0 0;
+    color: $blue;
+
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 52px;
+
+    @include desktop {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    @include laptop {
+      font-size: 30px;
+      line-height: 34px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+
+    @include tablet {
+      display: block;
+    }
+
+    &-text {
+      margin: 0;
+      color: $blue;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+
+      @include tablet {
+        margin: 0 0 400px;
+      }
+    }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      width: 100%;
+      padding: 18px 23px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 1px solid $yellow;
+      color: $blue;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      background-color: $yellow;
+      transition: $baseTransition;
+
+      &:hover {
+        color: $blue;
+        background-color: $yellow;
+      }
+
+      &:active {
+        background-color: $yellow;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 17px;
+        height: 12px;
+        background-image: url(../assets/icons/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 17px;
+
+        @include laptop {
+          width: 14px;
+          height: 10px;
+          background-size: 14px;
+        }
+      }
+
+      @include desktop {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__slider {
+    @include tablet {
+      position: absolute;
+      bottom: 70px;
+      left: 20px;
+      right: 20px;
+    }
+
+    & .swiper {
+      &-slide {
+        position: relative;
+        height: 338px;
+        background-color: rgba($color: #000000, $alpha: 1);
+
+        @include tablet {
+          height: 310px;
+        }
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      color: #fff;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 31px;
+      background: linear-gradient(
+        0deg,
+        rgba($color: $black, $alpha: 0.75) 0%,
+        rgba($color: $black, $alpha: 0) 100%
+      );
+    }
+  }
+}

@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KZ ALAÑ</title>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/swiper-bundle.min.js" defer></script>
     <script type="module" src="./js/index.js" defer></script>
   </head>
   <body>
@@ -159,7 +160,53 @@
       </section>
 
       <section class="project-news">
-        <div class="container"></div>
+        <div class="container">
+          <div class="project-news__header">
+            <div class="project-news__heading">
+              <h3 class="section-title">новости</h3>
+              <h2 class="project-news__title">Последние события проекта</h2>
+              <div class="project-news__heading-buttons">
+                <button class="project-news__button_prev"></button>
+                <button class="project-news__button_next"></button>
+              </div>
+            </div>
+
+            <div class="project-news__info">
+              <p class="project-news__info-text">
+                Без преувеличения самая прозрачная, честная и открытая стройка. Всегда будьте в
+                курсе последних событий и следите за развитием проекта Alan.
+              </p>
+              <a class="project-news__info-link" href="https://kff.kz/ru/news">Новости федерации</a>
+            </div>
+          </div>
+
+          <div class="project-news__slider">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img class="project-news__slider-image" src="./assets/slide-img.webp" alt="slide" />
+                  <div class="project-news__slider-text">ВТОРОЙ ВЫПУСК ПРОЕКТА «ALAÑ»</div>
+                </div>
+
+                <div class="swiper-slide">
+                  <img class="project-news__slider-image" src="./assets/slide-img.webp" alt="slide" />
+                  <div class="project-news__slider-text">ПЕРВЫЙ ВЫПУСК ПРОЕКТА «ALAÑ»</div>
+                </div>
+
+                <div class="swiper-slide">
+                  <img class="project-news__slider-image" src="./assets/slide-img.webp" alt="slide" />
+                  <div class="project-news__slider-text">КОМПАНИЯ 1XBET – ГЕНЕРАЛЬНЫЙ ПАРТНЕР</div>
+                </div>
+
+                <div class="swiper-slide">
+                  <img class="project-news__slider-image" src="./assets/slide-img.webp" alt="slide" />
+                  <div class="project-news__slider-text">КФФ ЗАПУСТИЛА ПРОЕКТ «ALAÑ»</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="interactive-map">
