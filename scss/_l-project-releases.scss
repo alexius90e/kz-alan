@@ -1,1 +1,180 @@
-.project-releases {}
+.project-releases {
+  padding: 60px 0 48px;
+
+  @include tablet {
+    padding: 40px 0 36px;
+  }
+
+  &__title {
+    margin: 0 0 72px;
+    color: $blue;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: center;
+
+    @include desktop {
+      margin: 0 0 60px;
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    @include laptop {
+      margin: 0 0 33px;
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    &_sub {
+      margin: 0 0 10px;
+      color: $yellow;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include desktop {
+        font-size: 20px;
+      }
+
+      @include laptop {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__slider {
+    & .swiper {
+      &-slide {
+        padding: 5px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  &__card {
+    overflow: hidden;
+    border-radius: 0px 0px 10px 10px;
+    background: $white;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.05);
+
+    &-video {
+      aspect-ratio: 16 / 9;
+    }
+
+    &-info {
+      padding: 24px;
+    }
+
+    &-date {
+      margin: 0 0 12px;
+      color: $yellow;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+
+      @include desktop {
+        font-size: 20px;
+      }
+
+      @include laptop {
+        font-size: 15px;
+      }
+    }
+
+    &-name {
+      margin: 0 0 18px;
+      color: $blue;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 35px;
+
+      @include desktop {
+        font-size: 27px;
+        line-height: 29px;
+      }
+
+      @include laptop {
+        font-size: 24px;
+        line-height: 26px;
+      }
+      
+    }
+
+    &-link {
+      color: $blue;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 13px;
+      text-transform: uppercase;
+
+      @include laptop {
+        font-size: 11px;
+        line-height: 12px;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      width: max-content;
+      margin: 16px 0 0;
+      padding: 18px 23px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 1px solid $yellow;
+      color: $blue;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      background-color: $white;
+      transition: $baseTransition;
+
+      &:hover {
+        color: $blue;
+        background-color: $yellow;
+      }
+
+      &:active {
+        background-color: $yellow;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 17px;
+        height: 12px;
+        background-image: url(../assets/icons/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 17px;
+
+        @include laptop {
+          width: 14px;
+          height: 10px;
+          background-size: 14px;
+        }
+      }
+
+      @include desktop {
+        font-size: 10px;
+      }
+    }
+  }
+}
