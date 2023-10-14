@@ -104,10 +104,12 @@
         font-size: 24px;
         line-height: 26px;
       }
-      
     }
 
     &-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       color: $blue;
       font-size: 11px;
       font-style: normal;
@@ -118,6 +120,14 @@
       @include laptop {
         font-size: 11px;
         line-height: 12px;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 9px;
+        height: 6px;
+        background: url(../assets/icons/right-b.svg) no-repeat center;
       }
     }
   }
