@@ -114,4 +114,176 @@
       height: auto;
     }
   }
+
+  &__videos {
+    display: flex;
+    gap: 64px;
+    margin: 0 0 36px;
+
+    @include desktop {
+      gap: 54px;
+    }
+
+    @include laptop {
+      gap: 40px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &-item {
+      flex: 1 1 50%;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      border-radius: 11px;
+      background-color: rgba($color: $blue, $alpha: 0.5);
+
+      @include tablet {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    gap: 64px;
+
+    @include desktop {
+      gap: 54px;
+    }
+
+    @include laptop {
+      display: block;
+    }
+
+    &-block {
+      flex: 1 1 50%;
+
+      & .section-title {
+        @include laptop {
+          width: fit-content;
+          margin: 0 auto 16px;
+        }
+      }
+
+      &_left {
+        @include laptop {
+          margin: 0 0 28px;
+        }
+
+        & .special-project__partner {
+          display: none;
+
+          @include laptop {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            margin: 0 auto 26px;
+          }
+
+          & span {
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+      }
+
+      &-text {
+        margin: 8px 0 0;
+        color: $white;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        text-transform: uppercase;
+
+        @include laptop {
+          max-width: 760px;
+          margin: 8px auto;
+          text-align: center;
+        }
+
+        & span {
+          padding: 2px 5px;
+          background-color: $yellow;
+        }
+      }
+    }
+
+    &-info {
+      display: flex;
+
+      @include laptop {
+        display: block;
+        max-width: 640px;
+        padding-bottom: 28px;
+        margin: 0 auto;
+      }
+
+      &-item {
+        padding: 25px 34px;
+        padding-left: 90px;
+        background-repeat: no-repeat;
+        background-position: top 25px left 25px;
+        background-size: 49px;
+
+        @include desktop {
+          padding: 24px 34px;
+          padding-left: 80px;
+          background-position: top 24px left 24px;
+          background-size: 40px;
+        }
+
+        @include laptop {
+          padding: 20px 20px;
+          padding-left: 80px;
+          background-position: top 20px left 20px;
+          
+        }
+
+        &_renovation {
+          flex: 1 1 340px;
+          border-radius: 11px 0px 0px 0px;
+          background-color: $yellow;
+          background-image: url(../assets/icons/map-b.svg);
+
+          @include laptop {
+            border-radius: 11px 11px 0px 0px;
+          }
+        }
+
+        &_ambassador {
+          flex: 1 1 235px;
+          border-radius: 0px 11px 0px 0px;
+          background-color: $white;
+          background-image: url(../assets/icons/man-b.svg);
+
+          @include laptop {
+            border-radius: 0px 0px 11px 11px;
+          }
+        }
+
+        &-label {
+          margin: 0 0 6px;
+          color: $blue;
+          font-size: 11px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        &-text {
+          color: $blue;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+      }
+    }
+  }
 }
