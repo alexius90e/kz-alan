@@ -1,5 +1,7 @@
 .special-project {
+  position: relative;
   padding: 66px 0 0;
+  overflow: hidden;
   background: url(../assets/bg/special-project-bg.webp) no-repeat center;
 
   @include desktop {
@@ -8,6 +10,36 @@
 
   @include mobile {
     padding: 29px 0 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -401px;
+    right: -401px;
+    z-index: 1;
+    width: 802px;
+    height: 802px;
+    background-image: url(../assets/kff-logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.15;
+    transform: rotate(-66.479deg);
+
+    @include desktop {
+      top: -335px;
+      right: -335px;
+      width: 670px;
+      height: 670px;
+    }
+
+    @include mobile {
+      top: -201px;
+      right: -201px;
+      width: 402px;
+      height: 402px;
+    }
   }
 
   &__header {
@@ -242,7 +274,6 @@
           padding: 20px 20px;
           padding-left: 80px;
           background-position: top 20px left 20px;
-          
         }
 
         &_renovation {

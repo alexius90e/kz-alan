@@ -9,4 +9,12 @@
   text-transform: uppercase;
   background: url(../assets/icons/field-y.svg) no-repeat left center;
   background-size: 25px 20px;
+
+  @include desktop {
+    font-size: 20px;
+  }
+
+  @include laptop {
+    font-size: 15px;
+  }
 }
