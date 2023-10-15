@@ -32,63 +32,6 @@ figure {
   margin: 0;
 }
 
-header {
-  min-height: 170px;
-  background-color: #ffffff;
-  background-image: url(../assets/gag/1.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-@media (max-width: 1200px) {
-  header {
-    min-height: 100px;
-  }
-}
-@media (max-width: 992px) {
-  header {
-    min-height: 120px;
-    background-image: url(../assets/gag/2.jpg);
-    background-size: auto 120px;
-    background-position: left center;
-  }
-}
-@media (max-width: 768px) {
-  header {
-    min-height: 100px;
-    background-size: auto 100px;
-  }
-}
-@media (max-width: 576px) {
-  header {
-    min-height: 80px;
-    background-image: url(../assets/gag/2.jpg);
-    background-size: auto 80px;
-  }
-}
-
-footer {
-  min-height: 200px;
-  background-color: #f2f2f2;
-  background-image: url(../assets/gag/3.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-@media (max-width: 1200px) {
-  footer {
-    min-height: 100px;
-  }
-}
-@media (max-width: 992px) {
-  footer {
-    min-height: 726px;
-    background-image: url(../assets/gag/4.jpg);
-    background-size: auto 726px;
-    background-position: center;
-  }
-}
-
 .container {
   max-width: 1480px;
   width: 100%;
