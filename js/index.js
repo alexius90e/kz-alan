@@ -1,3 +1,5 @@
+import './map.js'
+
 const projectNewsSlider = new Swiper('.project-news__slider .swiper', {
   breakpoints: {
     320: {
