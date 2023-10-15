@@ -1238,6 +1238,10 @@ footer {
     height: 402px;
   }
 }
+.interactive-map .container {
+  position: relative;
+  z-index: 2;
+}
 .interactive-map__title {
   margin: 10px 0 60px;
   color: #ffffff;
