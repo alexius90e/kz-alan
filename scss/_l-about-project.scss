@@ -1,12 +1,12 @@
 .about-project {
-  padding: 80px 0 226px;
+  padding: 80px 0 260px;
 
   @include desktop {
-    padding: 67px 0 194px;
+    padding: 67px 0 260px;
   }
 
   @include laptop {
-    padding: 48px 0 194px;
+    padding: 48px 0 260px;
   }
 
   @include tablet {
@@ -267,15 +267,13 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 20px;
-    height: 194px;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 194px;
     box-sizing: border-box;
     background: url(../assets/bg/special-project-bg.webp) no-repeat center;
     background-size: 1024px;
 
-    @include desktop {
-      height: 162px;
-    }
 
     @include tablet {
       position: static;
@@ -290,7 +288,7 @@
     }
 
     &-item {
-      padding-left: 110px;
+      padding-left: 100px;
       background-repeat: no-repeat;
       background-position: left center;
       background-size: 64px;
@@ -300,12 +298,21 @@
         background-size: 54px;
       }
 
+      @include laptop {
+        padding-left: 70px;
+        background-size: 46px;
+      }
+
       &_projects {
         background-image: url(../assets/icons/camera-wh.svg);
       }
 
       &_fields {
         background-image: url(../assets/icons/ball-wh.svg);
+      }
+
+      &_fullfields {
+        background-image: url(../assets/icons/soccer-field-1.svg);
       }
     }
 

@@ -503,16 +503,16 @@ figure {
 }
 
 .about-project {
-  padding: 80px 0 226px;
+  padding: 80px 0 260px;
 }
 @media (max-width: 1200px) {
   .about-project {
-    padding: 67px 0 194px;
+    padding: 67px 0 260px;
   }
 }
 @media (max-width: 992px) {
   .about-project {
-    padding: 48px 0 194px;
+    padding: 48px 0 260px;
   }
 }
 @media (max-width: 768px) {
@@ -806,17 +806,14 @@ figure {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  gap: 20px;
-  height: 194px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  min-height: 194px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: url(../assets/bg/special-project-bg.webp) no-repeat center;
   background-size: 1024px;
-}
-@media (max-width: 1200px) {
-  .about-project__infographics {
-    height: 162px;
-  }
 }
 @media (max-width: 768px) {
   .about-project__infographics {
@@ -836,7 +833,7 @@ figure {
   }
 }
 .about-project__infographics-item {
-  padding-left: 110px;
+  padding-left: 100px;
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 64px;
@@ -847,11 +844,20 @@ figure {
     background-size: 54px;
   }
 }
+@media (max-width: 992px) {
+  .about-project__infographics-item {
+    padding-left: 70px;
+    background-size: 46px;
+  }
+}
 .about-project__infographics-item_projects {
   background-image: url(../assets/icons/camera-wh.svg);
 }
 .about-project__infographics-item_fields {
   background-image: url(../assets/icons/ball-wh.svg);
+}
+.about-project__infographics-item_fullfields {
+  background-image: url(../assets/icons/soccer-field-1.svg);
 }
 .about-project__infographics-value {
   color: #ffcc00;
