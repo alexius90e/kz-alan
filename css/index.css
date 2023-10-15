@@ -32,20 +32,61 @@ figure {
   margin: 0;
 }
 
-header,
-footer {
-  padding: 25px 0;
-  color: #ffffff;
-  background-color: #133c8b;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: normal;
-  text-align: center;
+header {
+  min-height: 170px;
+  background-color: #ffffff;
+  background-image: url(../assets/gag/1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+@media (max-width: 1200px) {
+  header {
+    min-height: 100px;
+  }
+}
+@media (max-width: 992px) {
+  header {
+    min-height: 120px;
+    background-image: url(../assets/gag/2.jpg);
+    background-size: auto 120px;
+    background-position: left center;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    min-height: 100px;
+    background-size: auto 100px;
+  }
+}
+@media (max-width: 576px) {
+  header {
+    min-height: 80px;
+    background-image: url(../assets/gag/2.jpg);
+    background-size: auto 80px;
+  }
 }
 
 footer {
-  color: #222222;
+  min-height: 200px;
   background-color: #f2f2f2;
+  background-image: url(../assets/gag/3.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+@media (max-width: 1200px) {
+  footer {
+    min-height: 100px;
+  }
+}
+@media (max-width: 992px) {
+  footer {
+    min-height: 726px;
+    background-image: url(../assets/gag/4.jpg);
+    background-size: auto 726px;
+    background-position: center;
+  }
 }
 
 .container {
@@ -494,7 +535,7 @@ footer {
       -ms-flex: 1 1 235px;
           flex: 1 1 235px;
   border-radius: 0px 11px 0px 0px;
-  background-color: #ffffff;
+  background-color: #f2f2f2;
   background-image: url(../assets/icons/man-b.svg);
 }
 @media (max-width: 992px) {
@@ -1119,7 +1160,9 @@ footer {
 }
 
 .interactive-map {
+  position: relative;
   padding: 60px 0;
+  overflow: hidden;
   background: url(../assets/bg/special-project-bg.webp) no-repeat center;
   background-size: 100%;
 }
@@ -1127,6 +1170,72 @@ footer {
   .interactive-map {
     padding: 54px 0;
     background-size: 2670px;
+  }
+}
+.interactive-map::before {
+  content: "";
+  position: absolute;
+  top: -401px;
+  right: -401px;
+  z-index: 1;
+  width: 802px;
+  height: 802px;
+  background-image: url(../assets/kff-logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.15;
+  -webkit-transform: rotate(-66.479deg);
+      -ms-transform: rotate(-66.479deg);
+          transform: rotate(-66.479deg);
+}
+@media (max-width: 1200px) {
+  .interactive-map::before {
+    top: -335px;
+    right: -335px;
+    width: 670px;
+    height: 670px;
+  }
+}
+@media (max-width: 576px) {
+  .interactive-map::before {
+    top: -201px;
+    right: -201px;
+    width: 402px;
+    height: 402px;
+  }
+}
+.interactive-map::after {
+  content: "";
+  position: absolute;
+  bottom: -401px;
+  left: -401px;
+  z-index: 1;
+  width: 802px;
+  height: 802px;
+  background-image: url(../assets/kff-logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.15;
+  -webkit-transform: rotate(20.226deg);
+      -ms-transform: rotate(20.226deg);
+          transform: rotate(20.226deg);
+}
+@media (max-width: 1200px) {
+  .interactive-map::after {
+    bottom: -335px;
+    left: -335px;
+    width: 670px;
+    height: 670px;
+  }
+}
+@media (max-width: 576px) {
+  .interactive-map::after {
+    bottom: -201px;
+    left: -201px;
+    width: 402px;
+    height: 402px;
   }
 }
 .interactive-map__title {

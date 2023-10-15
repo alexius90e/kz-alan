@@ -33,18 +33,65 @@ figure {
   margin: 0;
 }
 
-header,
-footer {
-  padding: 25px 0;
-  color: $white;
-  background-color: $blue;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: normal;
-  text-align: center;
+// header,
+// footer {
+//   padding: 25px 0;
+//   color: $white;
+//   background-color: $blue;
+//   font-size: 32px;
+//   font-weight: 700;
+//   line-height: normal;
+//   text-align: center;
+// }
+
+header {
+  min-height: 170px;
+  background-color: $white;
+  background-image: url(../assets/gag/1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  @include desktop {
+    min-height: 100px;
+  }
+
+  @include laptop {
+    min-height: 120px;
+    background-image: url(../assets/gag/2.jpg);
+    background-size: auto 120px;
+    background-position: left center;
+  }
+
+  @include tablet {
+    min-height: 100px;
+    background-size: auto 100px;
+  }
+
+  @include mobile {
+    min-height: 80px;
+    background-image: url(../assets/gag/2.jpg);
+    background-size: auto 80px;
+  }
 }
 
 footer {
-  color: $black;
+  min-height: 200px;
   background-color: $grey;
+  background-image: url(../assets/gag/3.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  @include desktop {
+    min-height: 100px;
+  }
+
+  @include laptop {
+    min-height: 726px;
+    background-image: url(../assets/gag/4.jpg);
+    background-size: auto 726px;
+    background-position: center;
+  }
+
 }
