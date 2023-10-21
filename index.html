@@ -503,28 +503,44 @@
           <h3 class="section-title">Свяжитесь с нами</h3>
           <h2 class="contact-us__title">Подать заявку на участие в проекте</h2>
 
-          <form class="contact-us__form">
+          <form class="contact-us__form" id="applyParticipationForm">
             <fieldset class="contact-us__fieldset">
               <input
                 class="contact-us__input"
                 placeholder="Укажите название стадиона"
+                name="stadium"
                 type="text"
+                required
               />
             </fieldset>
 
             <fieldset class="contact-us__fieldset">
-              <input class="contact-us__input" placeholder="Балансодержатель" type="text" />
+              <input
+                class="contact-us__input"
+                placeholder="Балансодержатель"
+                name="balanceHolder"
+                type="text"
+                required
+              />
             </fieldset>
 
             <fieldset class="contact-us__fieldset">
-              <input class="contact-us__input" placeholder="Размер поля" type="text" />
+              <input
+                class="contact-us__input"
+                placeholder="Размер поля"
+                name="fieldSize"
+                type="text"
+                required
+              />
             </fieldset>
 
             <fieldset class="contact-us__fieldset">
               <input
                 class="contact-us__input"
                 placeholder="Адрес, где расположен стадион"
+                name="address"
                 type="text"
+                required
               />
             </fieldset>
 
@@ -532,7 +548,9 @@
               <input
                 class="contact-us__input"
                 placeholder="Контактное лицо (email или номер телефона)"
+                name="contacts"
                 type="text"
+                required
               />
             </fieldset>
 
@@ -540,6 +558,8 @@
               <button class="contact-us__input contact-us__input_submit">Отправить</button>
             </fieldset>
           </form>
+
+          <p class="contact-us__description">Срок подачи заявки до 15 ноября</p>
         </div>
       </section>
     </main>

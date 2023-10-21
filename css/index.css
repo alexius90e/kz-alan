@@ -1714,6 +1714,12 @@ figure {
     max-width: none;
   }
 }
+.contact-us__description {
+  margin-top: 32px;
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+}
 .contact-us__form {
   display: -webkit-box;
   display: -ms-flexbox;

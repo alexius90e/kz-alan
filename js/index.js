@@ -1,4 +1,5 @@
-import './map.js'
+import './map.js';
+import './form.js';
 
 const projectNewsSlider = new Swiper('.project-news__slider .swiper', {
   breakpoints: {
