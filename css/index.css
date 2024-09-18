@@ -1575,6 +1575,87 @@ footer {
 .interactive-map__area.active:hover {
   fill: #ffd900;
 }
+.interactive-map__plans-title {
+  margin: 54px 0 32px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  color: #ffffff;
+  text-align: center;
+}
+@media (max-width: 992px) {
+  .interactive-map__plans-title {
+    margin: 30px 0 25px;
+    font-size: 26px;
+  }
+}
+@media (max-width: 576px) {
+  .interactive-map__plans-title {
+    font-size: 20px;
+  }
+}
+.interactive-map__plans-slide {
+  position: relative;
+  padding: 18px;
+  padding-left: 54px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+@media (max-width: 768px) {
+  .interactive-map__plans-slide {
+    padding: 13px;
+    padding-left: 36px;
+  }
+}
+.interactive-map__plans-slide::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 18px;
+  display: block;
+  height: 22px;
+  width: 22px;
+  background: url(../assets/icons/pin-b.svg) center/15px no-repeat;
+  filter: invert(1);
+}
+@media (max-width: 768px) {
+  .interactive-map__plans-slide::before {
+    top: 19px;
+    left: 13px;
+    height: 16px;
+    width: 16px;
+    background-size: 10px;
+  }
+}
+.interactive-map__plans-slide-location {
+  font-weight: 400;
+  font-size: 13px;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .interactive-map__plans-slide-location {
+    font-size: 11px;
+  }
+}
+@media (max-width: 576px) {
+  .interactive-map__plans-slide-location {
+    font-size: 9px;
+  }
+}
+.interactive-map__plans-slide-name {
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .interactive-map__plans-slide-name {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .interactive-map__plans-slide-name {
+    font-size: 14px;
+  }
+}
 
 .project-releases {
   padding: 60px 0 48px;

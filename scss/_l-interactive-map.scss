@@ -599,4 +599,84 @@
       }
     }
   }
+
+  &__plans {
+    &-title {
+      margin: 54px 0 32px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      color: $white;
+      text-align: center;
+
+      @include laptop {
+        margin: 30px 0 25px;
+        font-size: 26px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+
+    &-slide {
+      position: relative;
+      padding: 18px;
+      padding-left: 54px;
+      border-bottom: 1px solid rgba($color: $white, $alpha: 0.5);
+
+      @include tablet {
+        padding: 13px;
+        padding-left: 36px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 26px;
+        left: 18px;
+        display: block;
+        height: 22px;
+        width: 22px;
+        background: url(../assets/icons/pin-b.svg) center / 15px no-repeat;
+        filter: invert(1);
+
+        @include tablet {
+          top: 19px;
+          left: 13px;
+          height: 16px;
+          width: 16px;
+          background-size: 10px;
+        }
+      }
+
+      &-location {
+        font-weight: 400;
+        font-size: 13px;
+        color: #fff;
+
+        @include laptop {
+          font-size: 11px;
+        }
+
+        @include mobile {
+          font-size: 9px;
+        }
+      }
+
+      &-name {
+        font-weight: 600;
+        font-size: 20px;
+        color: #fff;
+
+        @include laptop {
+          font-size: 16px;
+        }
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
