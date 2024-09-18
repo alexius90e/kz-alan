@@ -2,13 +2,13 @@ const mapButtons = document.querySelectorAll('.interactive-map__map-button');
 const mapPins = document.querySelectorAll('.interactive-map__pin');
 const mapAreas = document.querySelectorAll('.interactive-map__area');
 const mapGalleryButtons = document.querySelectorAll('.interactive-map__map-button-gallery');
-const mapItems = [...mapButtons, ...mapPins, ...mapAreas];
+const mapItems = [...mapButtons, ...mapPins, ...mapAreas, ...mapGalleryButtons];
 const mapGalleryWrapper = document.querySelector('.interactive-map__map-wrapper');
 
 [...mapPins, ...mapAreas].forEach((item) =>
   item.addEventListener('click', (event) => {
     const [_, location] = event.currentTarget.classList;
-    updateMap(location)
+    updateMap(location);
   })
 );
 
@@ -20,33 +20,24 @@ mapButtons.forEach((button) => {
     if (isGalleryButton) {
       const isActive = event.target.classList.contains('active');
       if (!isActive) {
-        [...mapButtons, ...mapPins, ...mapAreas, ...mapGalleryButtons].forEach((button) =>
-          button.classList.remove('active')
-        );
-        event.currentTarget.classList.add('active');
-        event.target.classList.add('active');
-        if (mapGalleryWrapper)
-          mapGalleryWrapper.setAttribute('class', `interactive-map__map-wrapper ${location}`);
+        mapItems.forEach((button) => button.classList.remove('active'));
+        [event.currentTarget, event.target].forEach((elem) => elem.classList.add('active'));
+        showGallery(location);
       } else {
-        event.currentTarget.classList.remove('active');
-        event.target.classList.remove('active');
-        const [_, location] = event.currentTarget.classList;
-        updateMap(location)
-        if (mapGalleryWrapper)
-          mapGalleryWrapper.setAttribute('class', 'interactive-map__map-wrapper');
+        [event.currentTarget, event.target].forEach((elem) => elem.classList.remove('active'));
+        hideGallery();
+        updateMap(location);
       }
     } else {
       const isActive = event.currentTarget.classList.contains('active');
       if (isActive) {
         mapGalleryButtons.forEach((button) => button.classList.remove('active'));
-        if (mapGalleryWrapper)
-          mapGalleryWrapper.setAttribute('class', 'interactive-map__map-wrapper');
+        hideGallery();
       } else {
         mapButtons.forEach((button) => button.classList.remove('active'));
         mapGalleryButtons.forEach((button) => button.classList.remove('active'));
-        if (mapGalleryWrapper)
-          mapGalleryWrapper.setAttribute('class', 'interactive-map__map-wrapper');
-        updateMap(location)
+        hideGallery();
+        updateMap(location);
       }
     }
   });
@@ -61,6 +52,15 @@ function updateMap(location) {
       element.classList.remove('active');
     }
   });
+}
+
+function hideGallery() {
+  if (mapGalleryWrapper) mapGalleryWrapper.setAttribute('class', 'interactive-map__map-wrapper');
+}
+
+function showGallery(location) {
+  if (mapGalleryWrapper && location)
+    mapGalleryWrapper.setAttribute('class', `interactive-map__map-wrapper ${location}`);
 }
 
 if (mapGalleryWrapper) {
