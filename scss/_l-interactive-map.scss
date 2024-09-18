@@ -2,8 +2,7 @@
   position: relative;
   padding: 60px 0;
   overflow: hidden;
-  background: url(../assets/bg/special-project-bg.webp) no-repeat center;
-  background-size: 100%;
+  background: url(../assets/bg/special-project-bg.webp) center / cover no-repeat;
 
   @include desktop {
     padding: 54px 0;
@@ -69,7 +68,7 @@
       height: 402px;
     }
   }
-  
+
   & .container {
     position: relative;
     z-index: 2;
@@ -125,59 +124,73 @@
     }
 
     @include laptop {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
 
     &-buttons {
       flex: 0 0 340px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px 20px;
 
       @include desktop {
         flex: 0 0 280px;
-        gap: 16px;
       }
 
       @include laptop {
         flex: 0 1 auto;
-        flex-direction: row;
         justify-content: center;
+        flex-direction: row;
         flex-wrap: wrap;
       }
 
-      @include tablet {
-        flex-direction: column;
-        order: 1;
+      &-title {
+        flex: 0 1 auto;
+        margin: 0 0 20px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 120%;
+        color: #fff;
+
+        @include laptop {
+          flex: 1 1 100%;
+          margin: 0 0 4px;
+          font-size: 26px;
+          text-align: center;
+        }
+
+        @include mobile {
+          font-size: 20px;
+        }
       }
     }
 
     &-button {
+      position: relative;
       display: flex;
       flex-direction: column;
-      padding: 21px 22px;
-      padding-left: 60px;
-      border: none;
-      border-radius: 12px;
-      background-color: $white;
-      background-image: url(../assets/icons/pin-b.svg);
-      background-position: left 22px center;
-      background-repeat: no-repeat;
-      background-size: 23px;
+      padding: 16px 24px;
+      padding-right: 60px;
+      box-sizing: border-box;
+      color: $white;
+      border: 2px solid rgba($color: $white, $alpha: 0.5);
+      background-color: rgba($color: $white, $alpha: 0);
       transition: $baseTransition;
       cursor: pointer;
 
       @include desktop {
-        padding: 18px 20px;
-        padding-left: 50px;
         background-size: 20px;
         background-position: left 20px center;
       }
 
       @include laptop {
-        padding: 17px 15px;
-        padding-left: 46px;
+        flex: 0 0 calc(50% - 10px);
+        padding: 14px 20px;
         background-size: 16px;
+      }
+
+      @include mobile {
+        flex: 1 1 100%;
       }
 
       &:hover {
@@ -189,15 +202,37 @@
       }
 
       &.active {
-        background-color: $yellow;
+        color: #133c8b;
+        background-color: $white;
 
         &:hover {
           fill: $yellow;
         }
       }
 
+      &-gallery {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        width: 60px;
+        padding: 0;
+        border: none;
+        background: url(../assets/icons/photo.svg) center / 28px no-repeat;
+        filter: brightness(100);
+        cursor: pointer;
+
+        &.active {
+          background-image: url(../assets/icons/back.svg);
+        }
+      }
+
+      &.active &-gallery {
+        filter: brightness(1);
+      }
+
       &-city {
-        color: $blue;
         font-size: 13px;
         font-style: normal;
         font-weight: 400;
@@ -208,12 +243,11 @@
         }
 
         @include laptop {
-          font-size: 9px;
+          font-size: 12px;
         }
       }
 
       &-name {
-        color: $blue;
         font-size: 20px;
         font-style: normal;
         font-weight: 600;
@@ -230,20 +264,282 @@
     }
 
     &-wrapper {
+      position: relative;
       flex: 1 1 auto;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
 
       @include mobile {
         margin: 0 -10px;
       }
     }
 
+    &-gallery {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-height: 500px;
+      display: none;
+
+      @include mobile {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        max-height: none;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+      }
+
+      &-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+
+        &-before,
+        &-after {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+
+          & .swiper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            &-slide {
+              padding-right: 8px;
+              box-sizing: border-box;
+              filter: drop-shadow(8px 0px 0px $white);
+
+              @include mobile {
+                padding-right: 3px;
+                filter: drop-shadow(3px 0px 0px $white);
+              }
+            }
+
+            &-button {
+              &-next,
+              &-prev {
+                width: auto;
+                height: auto;
+
+                &::after {
+                  content: '';
+                  display: block;
+                  height: 48px;
+                  width: 48px;
+                  border-radius: 48px;
+                  background: url(../assets/icons/prev.svg) center / 14px no-repeat;
+                  background-color: $white;
+
+                  @include tablet {
+                    height: 36px;
+                    width: 36px;
+                    background-size: 12px;
+                  }
+
+                  @include mobile {
+                    height: 20px;
+                    width: 20px;
+                    background-size: 7px;
+                  }
+                }
+              }
+
+              &-next {
+                right: 10%;
+
+                &::after {
+                  transform: rotate(180deg);
+                }
+              }
+
+              &-prev {
+                left: 10%;
+              }
+            }
+
+            &-pagination {
+              padding-right: 10%;
+              box-sizing: border-box;
+
+              @include mobile {
+                display: none;
+              }
+
+              &-bullet {
+                height: 15px;
+                width: 15px;
+                background-color: $white;
+
+                @include laptop {
+                  height: 10px;
+                  width: 10px;
+                }
+              }
+            }
+          }
+        }
+
+        &-before {
+          left: 0;
+          right: calc(50% - 8px);
+          z-index: 1;
+
+          @include mobile {
+            top: 0;
+            left: 0;
+            right: 33%;
+            bottom: 44%;
+          }
+        }
+
+        &-after {
+          left: calc(50% - 8px);
+          right: 0;
+          z-index: 2;
+
+          @include mobile {
+            top: 44%;
+            left: 33%;
+            right: 0;
+            bottom: 0;
+          }
+        }
+
+        &-tag {
+          position: absolute;
+          z-index: 10;
+          padding: 15px 42px;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 120%;
+          text-transform: uppercase;
+          color: #133c8b;
+          border-radius: 14px;
+          background-color: #ffcc00;
+
+          @include laptop {
+            padding: 10px 24px;
+            font-size: 20px;
+            border-radius: 8px;
+          }
+
+          @include mobile {
+            padding: 6px 16px;
+            font-size: 10px;
+          }
+        }
+
+        &-before &-tag {
+          top: 24px;
+          left: 36px;
+
+          @include laptop {
+            top: 20px;
+            left: 24px;
+          }
+
+          @include mobile {
+            top: 10px;
+            left: 5px;
+          }
+        }
+
+        &-after &-tag {
+          right: 24px;
+          bottom: 36px;
+
+          @include laptop {
+            right: 20px;
+            bottom: 24px;
+          }
+
+          @include mobile {
+            top: 10px;
+            left: 5px;
+            right: auto;
+            bottom: auto;
+          }
+        }
+
+        &-image {
+          display: block;
+          max-width: 100%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+          clip-path: polygon(
+            calc(12% + 0px) calc(0% + 16px),
+            calc(12% + 0.76px) calc(0% + 10.73px),
+            calc(12% + 2.92px) calc(0% + 6.31px),
+            calc(12% + 6.31px) calc(0% + 2.92px),
+            calc(12% + 10.73px) calc(0% + 0.76px),
+            calc(12% + 16px) calc(0% + 0px),
+            calc(100% - 16px) calc(0% + 0px),
+            calc(100% - 10.73px) calc(0% + 0.76px),
+            calc(100% - 6.31px) calc(0% + 2.92px),
+            calc(100% - 2.92px) calc(0% + 6.31px),
+            calc(100% - 0.76px) calc(0% + 10.73px),
+            calc(100% - 0px) calc(0% + 16px),
+            calc(88% - 0px) calc(100% - 16px),
+            calc(88% - 0.76px) calc(100% - 10.73px),
+            calc(88% - 2.92px) calc(100% - 6.31px),
+            calc(88% - 6.31px) calc(100% - 2.92px),
+            calc(88% - 10.73px) calc(100% - 0.76px),
+            calc(88% - 16px) calc(100% - 0px),
+            calc(0% + 16px) calc(100% - 0px),
+            calc(0% + 10.73px) calc(100% - 0.76px),
+            calc(0% + 6.31px) calc(100% - 2.92px),
+            calc(0% + 2.92px) calc(100% - 6.31px),
+            calc(0% + 0.76px) calc(100% - 10.73px),
+            calc(0% + 0px) calc(100% - 16px)
+          );
+        }
+      }
+    }
+
+    &-wrapper.shymkent &-gallery,
+    &-wrapper.almaty &-gallery,
+    &-wrapper.balpykbi &-gallery,
+    &-wrapper.aktobe &-gallery {
+      display: block;
+    }
+
+    &-wrapper.shymkent &-gallery-item.shymkent,
+    &-wrapper.almaty &-gallery-item.almaty,
+    &-wrapper.balpykbi &-gallery-item.balpykbi,
+    &-wrapper.aktobe &-gallery-item.aktobe {
+      display: block;
+    }
+
     &-svg {
+      display: block;
       max-width: 100%;
-      width: 100%;
       height: auto;
+    }
+
+    &-wrapper.shymkent &-svg,
+    &-wrapper.almaty &-svg,
+    &-wrapper.balpykbi &-svg,
+    &-wrapper.aktobe &-svg {
+      opacity: 0;
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 
