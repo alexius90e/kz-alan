@@ -1597,7 +1597,8 @@ footer {
 .interactive-map__plans-slide {
   position: relative;
   padding: 18px;
-  padding-left: 54px;
+  padding-left: 48px;
+  padding-right: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 @media (max-width: 768px) {
@@ -1643,7 +1644,7 @@ footer {
 }
 .interactive-map__plans-slide-name {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 19px;
   color: #fff;
 }
 @media (max-width: 992px) {
