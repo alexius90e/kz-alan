@@ -127,142 +127,6 @@
       flex-direction: column-reverse;
     }
 
-    &-buttons {
-      flex: 0 0 340px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px 20px;
-
-      @include desktop {
-        flex: 0 0 280px;
-      }
-
-      @include laptop {
-        flex: 0 1 auto;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-
-      &-title {
-        flex: 0 1 auto;
-        margin: 0 0 20px;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 120%;
-        color: #fff;
-
-        @include laptop {
-          flex: 1 1 100%;
-          margin: 0 0 4px;
-          font-size: 26px;
-          text-align: center;
-        }
-
-        @include mobile {
-          font-size: 20px;
-        }
-      }
-    }
-
-    &-button {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      padding: 16px 24px;
-      padding-right: 60px;
-      box-sizing: border-box;
-      color: $white;
-      border: 2px solid rgba($color: $white, $alpha: 0.5);
-      background-color: rgba($color: $white, $alpha: 0);
-      transition: $baseTransition;
-      cursor: pointer;
-
-      @include desktop {
-        background-size: 20px;
-        background-position: left 20px center;
-      }
-
-      @include laptop {
-        flex: 0 0 calc(50% - 10px);
-        padding: 14px 20px;
-        background-size: 16px;
-      }
-
-      @include mobile {
-        flex: 1 1 100%;
-      }
-
-      &:hover {
-        transform: scale(1.02);
-      }
-
-      &:active {
-        transform: scale(1);
-      }
-
-      &.active {
-        color: #133c8b;
-        background-color: $white;
-
-        &:hover {
-          fill: $yellow;
-        }
-      }
-
-      &-gallery {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        display: block;
-        width: 60px;
-        padding: 0;
-        border: none;
-        background: url(../assets/icons/photo.svg) center / 28px no-repeat;
-        filter: brightness(100);
-        cursor: pointer;
-
-        &.active {
-          background-image: url(../assets/icons/back.svg);
-        }
-      }
-
-      &.active &-gallery {
-        filter: brightness(1);
-      }
-
-      &-city {
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-
-        @include desktop {
-          font-size: 13px;
-        }
-
-        @include laptop {
-          font-size: 12px;
-        }
-      }
-
-      &-name {
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-
-        @include desktop {
-          font-size: 17px;
-        }
-
-        @include laptop {
-          font-size: 15px;
-        }
-      }
-    }
-
     &-wrapper {
       position: relative;
       flex: 1 1 auto;
@@ -543,16 +407,143 @@
     }
   }
 
+  &__buttons {
+    display: flex;
+    gap: 16px 20px;
+
+    @include desktop {
+      flex: 0 0 280px;
+    }
+
+    @include laptop {
+      flex: 0 1 auto;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &-title {
+      flex: 0 1 auto;
+      margin: 0 0 20px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      color: #fff;
+
+      @include laptop {
+        flex: 1 1 100%;
+        margin: 0 0 4px;
+        font-size: 26px;
+        text-align: center;
+      }
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+    padding-right: 60px;
+    box-sizing: border-box;
+    color: $white;
+    border: 2px solid rgba($color: $white, $alpha: 0.5);
+    background-color: rgba($color: $white, $alpha: 0);
+    transition: $baseTransition;
+    cursor: pointer;
+
+    @include desktop {
+      background-size: 20px;
+      background-position: left 20px center;
+    }
+
+    @include laptop {
+      flex: 0 0 calc(50% - 10px);
+      padding: 14px 20px;
+      background-size: 16px;
+    }
+
+    @include mobile {
+      flex: 1 1 100%;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+
+    &.active {
+      color: #133c8b;
+      background-color: $white;
+
+      &:hover {
+        fill: $yellow;
+      }
+    }
+
+    &-gallery {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 60px;
+      padding: 0;
+      border: none;
+      background: url(../assets/icons/photo.svg) center / 28px no-repeat;
+      filter: brightness(100);
+      cursor: pointer;
+
+      &.active {
+        background-image: url(../assets/icons/back.svg);
+      }
+    }
+
+    &.active &-gallery {
+      filter: brightness(1);
+    }
+
+    &-city {
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      @include desktop {
+        font-size: 13px;
+      }
+
+      @include laptop {
+        font-size: 12px;
+      }
+    }
+
+    &-name {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+
+      @include desktop {
+        font-size: 17px;
+      }
+
+      @include laptop {
+        font-size: 15px;
+      }
+    }
+  }
+
   &__pin {
     transition: $baseTransition;
-
-    &.almaty,
-    &.balpykbi,
-    &.aktau,
-    &.shymkent,
-    &.aktobe {
-      cursor: pointer;
-    }
+    cursor: pointer;
 
     @keyframes bounce2 {
       0%,
@@ -571,24 +562,16 @@
     }
 
     &.active {
-      // transform: translateY(-10px);
       animation: bounce2 1s ease;
     }
   }
 
   &__area {
     transition: $baseTransition;
+    cursor: pointer;
 
-    &.almaty,
-    &.balpykbi,
-    &.aktau,
-    &.shymkent,
-    &.aktobe {
-      cursor: pointer;
-
-      &:hover {
-        fill: #ffefaf;
-      }
+    &:hover {
+      fill: #ffefaf;
     }
 
     &.active {
@@ -602,53 +585,67 @@
 
   &__plans {
     &-title {
-      margin: 54px 0 32px;
+      margin: 48px 0 32px;
       font-weight: 700;
       font-size: 32px;
       line-height: 120%;
       color: $white;
-      text-align: center;
+      text-align: left;
 
       @include laptop {
-        margin: 30px 0 25px;
+        margin: 28px 0 18px;
         font-size: 26px;
       }
 
       @include mobile {
         font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    &-slider {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 25px;
+
+      @include mobile {
+        gap: 10px;
       }
     }
 
     &-slide {
       position: relative;
-      padding: 18px;
-      padding-left: 48px;
-      padding-right: 12px;
+      flex: 0 0 calc(100% / 4 - 25px / 4 * 3);
+      padding: 17px 18px;
+      padding-left: 54px;
+      box-sizing: border-box;
       border-bottom: 1px solid rgba($color: $white, $alpha: 0.5);
 
-      @include tablet {
-        padding: 13px;
-        padding-left: 36px;
+      @include desktop {
+        flex: 0 0 calc(100% / 3 - 25px / 3 * 2);
+      }
+
+      @include laptop {
+        flex: 0 0 calc(100% / 2 - 25px / 2);
+      }
+
+      @include mobile {
+        flex: 1 1 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
       }
 
       &::before {
         content: '';
         position: absolute;
-        top: 26px;
-        left: 18px;
+        top: 50%;
+        left: 10px;
         display: block;
-        height: 22px;
-        width: 22px;
+        width: 24px;
+        aspect-ratio: 1;
         background: url(../assets/icons/pin-b.svg) center / 15px no-repeat;
+        transform: translateY(-50%);
         filter: invert(1);
-
-        @include tablet {
-          top: 19px;
-          left: 13px;
-          height: 16px;
-          width: 16px;
-          background-size: 10px;
-        }
       }
 
       &-location {
@@ -656,26 +653,18 @@
         font-size: 13px;
         color: #fff;
 
-        @include laptop {
-          font-size: 11px;
-        }
-
         @include mobile {
-          font-size: 9px;
+          font-size: 12px;
         }
       }
 
       &-name {
         font-weight: 600;
-        font-size: 19px;
+        font-size: 20px;
         color: #fff;
 
-        @include laptop {
-          font-size: 16px;
-        }
-
         @include mobile {
-          font-size: 14px;
+          font-size: 15px;
         }
       }
     }

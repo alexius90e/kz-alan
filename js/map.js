@@ -1,7 +1,7 @@
-const mapButtons = document.querySelectorAll('.interactive-map__map-button');
+const mapButtons = document.querySelectorAll('.interactive-map__button');
 const mapPins = document.querySelectorAll('.interactive-map__pin');
 const mapAreas = document.querySelectorAll('.interactive-map__area');
-const mapGalleryButtons = document.querySelectorAll('.interactive-map__map-button-gallery');
+const mapGalleryButtons = document.querySelectorAll('.interactive-map__button-gallery');
 const mapItems = [...mapButtons, ...mapPins, ...mapAreas, ...mapGalleryButtons];
 const mapGalleryWrapper = document.querySelector('.interactive-map__map-wrapper');
 
@@ -14,7 +14,7 @@ const mapGalleryWrapper = document.querySelector('.interactive-map__map-wrapper'
 
 mapButtons.forEach((button) => {
   button.addEventListener('click', (event) => {
-    const isGalleryButton = event.target.classList.contains('interactive-map__map-button-gallery');
+    const isGalleryButton = event.target.classList.contains('interactive-map__button-gallery');
     const location = event.currentTarget.dataset.location;
 
     if (isGalleryButton) {
@@ -87,38 +87,3 @@ if (mapGalleryWrapper) {
     });
   });
 }
-
-const swiper = new Swiper('.interactive-map__plans .swiper', {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  autoplay: {
-    delay: 1500,
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 16,
-    },
-    400: {
-      slidesPerView: 1.5,
-      spaceBetween: 16,
-    },
-    480: {
-      slidesPerView: 2,
-      spaceBetween: 16,
-    },
-    768: {
-      slidesPerView: 2.5,
-      spaceBetween: 16,
-    },
-    992: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-    1200: {
-      slidesPerView: 4,
-      spaceBetween: 20,
-    },
-  },
-});
